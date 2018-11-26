@@ -6,22 +6,35 @@ using UnityEngine.UI;
 public class GameMenu : MonoBehaviour {
 
     public GameObject theMenu;
-    public Text statusName, statusHP, statusMP, statusStr, statusDef, StatusWpnEqpd, StatusWpnPwr, statusArmrEqpd, statusArmrPwr, statusExp;
-    public Image statusImage;
 
+    // For root page of menu 
+    [Header("Menu root")]
     public GameObject[] windows;
     public GameObject[] charStatsHolder;
-    public GameObject[] statusButton;
-
     public Text[] nameText, hpText, mpText, lvlText, expText;
     public Slider[] expSlider;
     public Image[] charImage;
 
+    // For the status subpage of characters
+    [Header("Status subpage")]
+    public Image statusImage;
+    public GameObject[] statusButton;
+    public Text statusName, statusHP, statusMP, statusStr, statusDef, StatusWpnEqpd, StatusWpnPwr, statusArmrEqpd, statusArmrPwr, statusExp;
+
+    // For the inventory subpage of the party
+    [Header("Inventory subpage")]
+    public ItemButton[] itemButtons;
+    public Item activeItem;
+    public Text itemName, itemDescription, useButtonText;
+    public string selectedItem;
+
     private CharStats[] playerStats;
+
+    public static GameMenu instance;
 
     // Use this for initialization
     void Start () {
-	
+        instance = this;
 	}
 	
 	// Update is called once per frame
@@ -130,6 +143,44 @@ public class GameMenu : MonoBehaviour {
         statusImage.sprite = playerStats[charSelect].charImage;
     }
 
-    
+    public void ShowItems()
+    {
+        GameManager.instance.SortItems();
+
+        for(int i = 0; i < itemButtons.Length; i++)
+        {
+            itemButtons[i].buttonID = i;
+
+            if(GameManager.instance.itemInventory[i] != "")
+            {
+                itemButtons[i].buttonImage.gameObject.SetActive(true);
+                itemButtons[i].buttonImage.sprite = GameManager.instance.GetItemDetails(GameManager.instance.itemInventory[i]).itemSprite;
+                itemButtons[i].amountText.text = GameManager.instance.numberOfItems[i].ToString();
+            }
+            else
+            {
+                itemButtons[i].buttonImage.gameObject.SetActive(false);
+                itemButtons[i].amountText.text = "";
+            }
+        }
+    }
+
+    public void SelectItem(Item newItem)
+    {
+        activeItem = newItem;
+        if(activeItem.isUsable)
+        {
+            useButtonText.text = "Use";
+        }
+
+        if(activeItem.isWeapon || activeItem.isArmor)
+        {
+            useButtonText.text = "Equip";
+        }
+
+        itemName.text = activeItem.itemName;
+        itemDescription.text = activeItem.description;
+
+    }
 
 }
