@@ -17,11 +17,16 @@ public class GameManager : MonoBehaviour {
     public int[] numberOfItems;
     public Item[] refItems;
 
-    // Use this for initialization
-    void Start () {
+    private void Awake()
+    {
         instance = this;
 
         DontDestroyOnLoad(gameObject);
+    }
+
+    // Use this for initialization
+    void Start () {
+        SortItems();
     }
 	
 	// Update is called once per frame
@@ -35,6 +40,16 @@ public class GameManager : MonoBehaviour {
         {
             PlayerController.instance.canMove = true;
         }
+
+        if(Input.GetKeyDown(KeyCode.J))
+        {
+            AddItem("Iron armor");
+            AddItem("Wrong item");
+
+            RemoveItem("HP potion");
+            RemoveItem("Lost sock");
+        }
+
     }
 
     public Item GetItemDetails(string itemToGrab)
@@ -75,4 +90,83 @@ public class GameManager : MonoBehaviour {
             }
         }
     }
+
+    public void AddItem(string itemToAdd)
+    {
+        int itemPosition = 0;
+        bool foundSlot = false;
+
+        for(int i = 0; i < itemInventory.Length; i++)
+        {
+            if(itemInventory[i] == "" || itemInventory[i] == itemToAdd)
+            {
+                itemPosition = i;
+                i = itemInventory.Length;
+                foundSlot = true;
+            }
+        }
+
+        if(foundSlot)
+        {
+            bool itemExist = false;
+
+            for(int i = 0; i < refItems.Length; i++)
+            {
+                if(refItems[i].itemName == itemToAdd)
+                {
+                    itemExist = true;
+                    i = refItems.Length;
+                    
+                }
+            }
+
+            if(itemExist)
+            {
+                itemInventory[itemPosition] = itemToAdd;
+                numberOfItems[itemPosition]++;
+            } else
+            {
+                Debug.LogError(itemToAdd + " does not exist!");
+            }
+        }
+
+        GameMenu.instance.ShowItems();
+
+    }
+
+    public void RemoveItem(string itemToRemove)
+    {
+        bool foundItem = false;
+        int itemPosition = 0;
+
+        for (int i = 0; i < itemInventory.Length; i++)
+        {
+            if (itemInventory[i] == itemToRemove)
+            {
+                foundItem = true;
+                itemPosition = i;
+                i = itemInventory.Length;
+            }
+        }
+
+        if(foundItem)
+        {
+            numberOfItems[itemPosition]--;
+
+            if(numberOfItems[itemPosition] <= 0)
+            {
+                itemInventory[itemPosition] = "";
+                GameMenu.instance.itemName.text = "";
+                GameMenu.instance.itemDescription.text = "";
+            }
+
+            GameMenu.instance.ShowItems();
+
+        } else
+        {
+            Debug.LogError(itemToRemove + " couldn't be found!");
+        }
+
+    }
+
 }
