@@ -10,12 +10,14 @@ public class GameManager : MonoBehaviour {
     public CharStats[] playerStats;
 
     // To determine if player can move
-    public bool gameMenuOpen, dialogActive, fadingBetweenAreas;
+    public bool gameMenuOpen, dialogActive, fadingBetweenAreas, shopActive;
 
     // To manage the player inventory
     public string[] itemInventory;
     public int[] numberOfItems;
     public Item[] refItems;
+
+    public int currentGold;
 
     private void Awake()
     {
@@ -32,22 +34,13 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         // To determine if player can move
-        if (gameMenuOpen || dialogActive || fadingBetweenAreas)
+        if (gameMenuOpen || dialogActive || fadingBetweenAreas || shopActive)
         {
             PlayerController.instance.canMove = false;
         }
         else
         {
             PlayerController.instance.canMove = true;
-        }
-
-        if(Input.GetKeyDown(KeyCode.J))
-        {
-            AddItem("Iron armor");
-            AddItem("Wrong item");
-
-            RemoveItem("HP potion");
-            RemoveItem("Lost sock");
         }
 
     }
@@ -167,6 +160,24 @@ public class GameManager : MonoBehaviour {
             Debug.LogError(itemToRemove + " couldn't be found!");
         }
 
+    }
+
+    public bool CanSell(string itemName)
+    {
+        bool canSell = false;
+
+        for (int i = 0; i < itemInventory.Length; i++)
+        {
+            if (itemInventory[i] == itemName)
+            {
+                if(numberOfItems[i] > 0)
+                {
+                    canSell = true;
+                }
+            }
+        }
+
+        return canSell;
     }
 
 }

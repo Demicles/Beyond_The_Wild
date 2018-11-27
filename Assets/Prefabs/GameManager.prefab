@@ -206,6 +206,7 @@ MonoBehaviour:
   gameMenuOpen: 0
   dialogActive: 0
   fadingBetweenAreas: 0
+  shopActive: 0
   itemInventory:
   - 
   - 
@@ -255,6 +256,7 @@ MonoBehaviour:
   - {fileID: 114980439763741164, guid: 4a855fcdd4f0c4243bd5526c4e3b16f6, type: 2}
   - {fileID: 114318066204603950, guid: 61c5a60bb3751cc46ac8048a148b6360, type: 2}
   - {fileID: 114922761240848106, guid: c3d2b9065e3a8a045bd0522f14a2fe79, type: 2}
+  currentGold: 100
 --- !u!114 &114960652973045342
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -113,6 +113,90 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &125652720
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4774193248394736, guid: 6735b5786be0561409c2b06b06fb00da, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774193248394736, guid: 6735b5786be0561409c2b06b06fb00da, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774193248394736, guid: 6735b5786be0561409c2b06b06fb00da, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.0546875
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774193248394736, guid: 6735b5786be0561409c2b06b06fb00da, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774193248394736, guid: 6735b5786be0561409c2b06b06fb00da, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774193248394736, guid: 6735b5786be0561409c2b06b06fb00da, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774193248394736, guid: 6735b5786be0561409c2b06b06fb00da, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774193248394736, guid: 6735b5786be0561409c2b06b06fb00da, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1044234086376316, guid: 6735b5786be0561409c2b06b06fb00da, type: 2}
+      propertyPath: m_Name
+      value: AreaExit-ToShop01
+      objectReference: {fileID: 0}
+    - target: {fileID: 114536461538699258, guid: 6735b5786be0561409c2b06b06fb00da,
+        type: 2}
+      propertyPath: areaTransitionName
+      value: Town-Shop01
+      objectReference: {fileID: 0}
+    - target: {fileID: 114536461538699258, guid: 6735b5786be0561409c2b06b06fb00da,
+        type: 2}
+      propertyPath: areaToLoad
+      value: Shop
+      objectReference: {fileID: 0}
+    - target: {fileID: 61198750450350378, guid: 6735b5786be0561409c2b06b06fb00da,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 0.8113663
+      objectReference: {fileID: 0}
+    - target: {fileID: 61198750450350378, guid: 6735b5786be0561409c2b06b06fb00da,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 0.17840552
+      objectReference: {fileID: 0}
+    - target: {fileID: 61198750450350378, guid: 6735b5786be0561409c2b06b06fb00da,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 0.52197087
+      objectReference: {fileID: 0}
+    - target: {fileID: 61198750450350378, guid: 6735b5786be0561409c2b06b06fb00da,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 1.0123417
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113387245479652, guid: 6735b5786be0561409c2b06b06fb00da, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4113387245479652, guid: 6735b5786be0561409c2b06b06fb00da, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.18
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6735b5786be0561409c2b06b06fb00da, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &399589153
 GameObject:
   m_ObjectHideFlags: 0
@@ -4110,6 +4194,48 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &445431836
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4475659228518036, guid: 90896d34466dfc24e9529156c5f2df9f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.631383
+      objectReference: {fileID: 0}
+    - target: {fileID: 4475659228518036, guid: 90896d34466dfc24e9529156c5f2df9f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -6.0352764
+      objectReference: {fileID: 0}
+    - target: {fileID: 4475659228518036, guid: 90896d34466dfc24e9529156c5f2df9f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.04296875
+      objectReference: {fileID: 0}
+    - target: {fileID: 4475659228518036, guid: 90896d34466dfc24e9529156c5f2df9f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4475659228518036, guid: 90896d34466dfc24e9529156c5f2df9f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4475659228518036, guid: 90896d34466dfc24e9529156c5f2df9f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4475659228518036, guid: 90896d34466dfc24e9529156c5f2df9f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4475659228518036, guid: 90896d34466dfc24e9529156c5f2df9f, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 90896d34466dfc24e9529156c5f2df9f, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &1071263965
 Prefab:
   m_ObjectHideFlags: 0
@@ -4306,7 +4432,7 @@ Transform:
   - {fileID: 1124284349}
   - {fileID: 1661832439}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1661832438
 GameObject:
@@ -6060,7 +6186,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4774193248394736, guid: 6735b5786be0561409c2b06b06fb00da, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 61198750450350378, guid: 6735b5786be0561409c2b06b06fb00da,
         type: 2}
@@ -6084,6 +6210,10 @@ Prefab:
         type: 2}
       propertyPath: areaToLoad
       value: HomeVillage
+      objectReference: {fileID: 0}
+    - target: {fileID: 1044234086376316, guid: 6735b5786be0561409c2b06b06fb00da, type: 2}
+      propertyPath: m_Name
+      value: AreaExit-ToHomeVillage
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6735b5786be0561409c2b06b06fb00da, type: 2}
