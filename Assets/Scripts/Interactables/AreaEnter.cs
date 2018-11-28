@@ -5,6 +5,7 @@ using UnityEngine;
 public class AreaEnter : MonoBehaviour {
 
     public string transitionName;
+    public bool needFade = false;
 
     // Use this for initialization
     void Start () {
@@ -13,7 +14,11 @@ public class AreaEnter : MonoBehaviour {
             PlayerController.instance.transform.position = transform.position;
         }
 
-        UIFade.instance.FadeOut();
+        if (GameManager.instance.fadingBetweenAreas)
+        {
+            UIFade.instance.FadeOut();
+        }
+        
         GameManager.instance.fadingBetweenAreas = false;
     }
 	

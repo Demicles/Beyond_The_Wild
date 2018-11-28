@@ -36,6 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4708341780009866}
   - component: {fileID: 114765765282887848}
+  - component: {fileID: 114695532212175170}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -159,6 +160,24 @@ MonoBehaviour:
   equippedWeapon: 
   equippedArmor: 
   charImage: {fileID: 21300000, guid: e0ddba6d3fcf21f49949fcc95c849aac, type: 3}
+--- !u!114 &114695532212175170
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1201653402800170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646b65aba2655a9448a63bb97b5eb9e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questMarkerNames:
+  - 
+  - Fight the trolls
+  - Complete trolls
+  - Quest test
+  - Save the girl
+  questMarkerCompleted: 
 --- !u!114 &114745755968412926
 MonoBehaviour:
   m_ObjectHideFlags: 1

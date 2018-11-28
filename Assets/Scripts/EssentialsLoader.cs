@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class EssentialsLoader : MonoBehaviour {
 
+    public GameObject gameManag; // Containings stats
     public GameObject UIScreen; // Main UI; dialog
     public GameObject player; // Our player
-    public GameObject gameManag; // Containings stats
 
     // Use this for initialization
     void Start () {
+        if (GameManager.instance == null)
+        {
+            Instantiate(gameManag);
+        }
+
         if (UIFade.instance == null)
         {
             Instantiate(UIScreen);
@@ -21,10 +26,6 @@ public class EssentialsLoader : MonoBehaviour {
             PlayerController.instance = clone;
         }
 
-        if (GameManager.instance == null)
-        {
-            Instantiate(gameManag);
-        }
     }
 	
 	// Update is called once per frame
